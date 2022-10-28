@@ -1,0 +1,50 @@
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class="mb-6">
+    <%= f.label :email, class: "block mb-2 text-sm font-medium text-primary-900 dark:text-primary-300" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-white border border-white-300 text-primary-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-primary dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <div class="mb-6">
+    <%= f.label :password, class: "block mb-2 text-sm font-medium text-primary-900 dark:text-primary-300" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "bg-white border border-white-300 text-primary-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-primary dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="mb-6">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+
+<!--
+
+<form>
+  <div class="mb-6">
+    <label for="email" class="block mb-2 text-sm font-medium text-primary-900 dark:text-primary-300">Your email</label>
+    <input type="email" id="email" class="bg-white-50 border border-white-300 text-primary-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-primary dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required="">
+  </div>
+  <div class="mb-6">
+    <label for="password" class="block mb-2 text-sm font-medium text-primary-900 dark:text-primary-300">Your password</label>
+    <input type="password" id="password" class="bg-white-50 border border-white-300 text-primary-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-primary dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+  </div>
+  <div class="flex items-start mb-6">
+    <div class="flex items-center h-5">
+      <input id="remember" type="checkbox" value="" class="w-4 h-4 bg-white-50 rounded border border-white-300 focus:ring-3 focus:ring-blue-300 dark:bg-white-700 dark:border-white-600 dark:focus:ring-blue-600 dark:ring-offset-white-800" required="">
+    </div>
+    <label for="remember" class="ml-2 text-sm font-medium text-primary-900 dark:text-primary-300">Remember me</label>
+  </div>
+  <button type="submit" class="text-primary bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+</form>
+
+
+-->
