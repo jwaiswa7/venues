@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class VenuesController < ApplicationController
-  before_action :set_venue, only: %i[ show edit update destroy ]
+  before_action :set_venue, only: %i[show edit update destroy]
 
   # GET /venues or /venues.json
   def index
@@ -7,8 +9,7 @@ class VenuesController < ApplicationController
   end
 
   # GET /venues/1 or /venues/1.json
-  def show
-  end
+  def show; end
 
   # GET /venues/new
   def new
@@ -16,8 +17,7 @@ class VenuesController < ApplicationController
   end
 
   # GET /venues/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /venues or /venues.json
   def create
@@ -25,7 +25,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       if @venue.save
-        format.html { redirect_to venue_url(@venue), notice: "Venue was successfully created." }
+        format.html { redirect_to venue_url(@venue), notice: 'Venue was successfully created.' }
         format.json { render :show, status: :created, location: @venue }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class VenuesController < ApplicationController
   def update
     respond_to do |format|
       if @venue.update(venue_params)
-        format.html { redirect_to venue_url(@venue), notice: "Venue was successfully updated." }
+        format.html { redirect_to venue_url(@venue), notice: 'Venue was successfully updated.' }
         format.json { render :show, status: :ok, location: @venue }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +52,20 @@ class VenuesController < ApplicationController
     @venue.destroy
 
     respond_to do |format|
-      format.html { redirect_to venues_url, notice: "Venue was successfully destroyed." }
+      format.html { redirect_to venues_url, notice: 'Venue was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_venue
-      @venue = Venue.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def venue_params
-      params.require(:venue).permit(:name, :user_id, :details)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_venue
+    @venue = Venue.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def venue_params
+    params.require(:venue).permit(:name, :user_id, :details)
+  end
 end
