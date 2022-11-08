@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Venues</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= render 'shared/navbar' %>
-      <%= yield %>
-    </main>
-  </body>
+   <head>
+      <title>Venues</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <%= javascript_importmap_tags %>
+   </head>
+   <body>
+      <div class="min-h-screen flex flex-col mx-auto">
+         <header class=""><%= render 'shared/navbar' %></header>
+         <main class="flex-1 bg-white p-2 container mx-auto mt-28 px-5">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <div class="mb-20">
+               <%= yield %>
+            </div>
+         </main>
+         <footer class="p-2 bg-white-200">Footer</footer>
+      </div>
+   </body>
 </html>
