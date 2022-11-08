@@ -80,3 +80,4 @@ end
 
 gem 'devise'
 gem 'pundit'
+gem 'country_select'
