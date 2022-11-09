@@ -14,6 +14,12 @@
     <%= venue.description %>
   </p>
 
+  <div>
+    <% venue.images.each do |image| %>
+      <%= image_tag url_for(image) %>
+    <% end %>
+  </div>
+
   <% if action_name != "show" %>
     <%= link_to "Show this venue", venue, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this venue', edit_venue_path(venue), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" if policy(:venue).edit? %>
