@@ -78,6 +78,7 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'devise'
-gem 'pundit'
 gem 'country_select'
+gem 'devise'
+gem 'image_processing'
+gem 'pundit'
