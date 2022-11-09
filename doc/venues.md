@@ -15,3 +15,8 @@
 - All users can see the venue details
 - Only the user assigned to the venue can update and edit the venue
 - No one is allowed to delete the venues
+
+## To do 
+
+- [] Complete the pundit access
+- [] Work on the model tests
