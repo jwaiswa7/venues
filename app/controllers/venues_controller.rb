@@ -6,6 +6,7 @@ class VenuesController < ApplicationController
   # GET /venues or /venues.json
   def index
     @venues = Venue.all
+    authorize @venues
   end
 
   # GET /venues/1 or /venues/1.json
@@ -14,6 +15,7 @@ class VenuesController < ApplicationController
   # GET /venues/new
   def new
     @venue = Venue.new
+    authorize @venue
   end
 
   # GET /venues/1/edit
@@ -66,6 +68,7 @@ class VenuesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def venue_params
-    params.require(:venue).permit(:name, :description,:country, :city, :street, :state, images: [] ).merge(user: current_user)
+    params.require(:venue).permit(:name, :description, :country, :city, :street, :state,
+                                  images: []).merge(user: current_user)
   end
 end
