@@ -2,6 +2,7 @@
 
 class Venue < ApplicationRecord
   include VenueStateLogic
+  include Searchable
 
   belongs_to :user
 

@@ -81,5 +81,6 @@ end
 gem 'aasm'
 gem 'country_select'
 gem 'devise'
+gem 'elasticsearch-model'
 gem 'image_processing'
 gem 'pundit'
